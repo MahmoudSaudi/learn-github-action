@@ -8,5 +8,5 @@ jobs:
 
     steps:
       - name: Print Hello Github Actions
-        run: echo "Welcome to our Github Actions Workflow" # عشان انفذ ال runner in terminal
+        run: echo "Welcome to our Github Actions Workflow " # عشان انفذ ال runner in terminal
   
