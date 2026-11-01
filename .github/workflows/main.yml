@@ -1,4 +1,4 @@
-name: Test Workflows
+name: First Workflows
 on: 
   push:
     branches: 
@@ -10,4 +10,11 @@ jobs:
     steps:
       - name: Print Hello Github Actions
         run: echo "Welcome to our Github Actions Workflow" 
+
+      - name: Chechout repository
+        uses: actions/checkout@v6.1.0
+        
+      - name: List Repositry File
+        run: ls -la
+
   
