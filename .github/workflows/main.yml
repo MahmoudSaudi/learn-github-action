@@ -1,12 +1,13 @@
 name: First Workflows
-on: # متى يعمل الـ Workflow
+on: 
   push:
-    branches: -man
+    branches: 
+      - man
 jobs:
   example-jop:
     runs-on: ubuntu-latest
 
     steps:
       - name: Print Hello Github Actions
-        run: echo "Welcome to our Github Actions Workflow " # عشان انفذ ال runner in terminal
+        run: echo "Welcome to our Github Actions Workflow " 
   
