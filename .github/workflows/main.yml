@@ -1,6 +1,6 @@
 name: First Workflows
 on: 
-  push:
+  workflow_dispatch:
     branches: 
       - main
 jobs:
