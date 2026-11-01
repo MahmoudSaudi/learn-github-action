@@ -1,13 +1,13 @@
-name: First Workflows
+name: Test Workflows
 on: 
   push:
     branches: 
-      - man
+      - main
 jobs:
   example-jop:
     runs-on: ubuntu-latest
 
     steps:
       - name: Print Hello Github Actions
-        run: echo "Welcome to our Github Actions Workflow " 
+        run: echo "Welcome to our Github Actions Workflow" 
   
