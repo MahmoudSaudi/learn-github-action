@@ -13,14 +13,14 @@ jobs:
       - run: echo "Building..."
 
   deploy:
-    needs: build
+    needs: [build , test ]
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Deploying after build..."
+      - run: echo "Deploying after build and test..."
   test:
     runs-on: ubuntu-latest
     steps:
       - name: checkout test
-        uses: actions/checkout@v6.1.0
+        uses: actions/checkout@v4
       - name: Run test
         run: npm test
