@@ -2,7 +2,7 @@ name: Manual File
 on: 
   workflow_dispatch:
     inputs:
-      enviroment:
+      environment:
         description: "choose enviroment"
         required: true
         default: "staging"
