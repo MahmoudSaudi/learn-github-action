@@ -1,22 +1,19 @@
-name: Test Push and Pull Request
-on: 
+name: New Test Push and Pull Request
+on:
   push:
-    branches:
-      - main
-      - "release/**"
-    paths:
-      - "src/**" 
+    branches: [ main ]
   pull_request:
-    branches:
-      - main
-      - "release/**"
+  workflow_dispatch:
 
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
-    steps: 
-      - name: checkout code v2
-        uses: actions/checkout@v6.1.0
-      - name: Run tests
-        run: npm test  
+    steps:
+      - run: echo "Building..."
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Deploying after build..."
