@@ -17,4 +17,29 @@ jobs:
       - name: List Repositry File
         run: ls -la
 
+
+
+#################################################
+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
+name: Manual File
+on: 
+  workflow_dispatch:
+    inputs:
+      enviroment:
+        description: "choose enviroment"
+        required: true
+        default: "staging"
+        type: choice
+        options:
+          - staging
+          - production
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy application
+        run: echo "Deploying the application ${{ inputs.enviroment }} enviroment"
+
+
   
