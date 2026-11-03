@@ -1,20 +1,15 @@
 name: Manual File
 on: 
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: "choose enviroment"
-        required: true
-        default: "staging"
-        type: choice
-        options:
-          - staging
-          - production
+  repository_dispatch:
+    types:
+      - incident_report
 
 jobs:
-  deploy:
+  handel-incident:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy application
-        run: echo "Deploying the application ${{ inputs.enviroment }} enviroment"
+      - name: Print incdent detiles
+        run: echo "Incdent report"
+      - name: print commit message
+        run: echo " $ {{ github.event.head_commit.message }} "
   
