@@ -1,8 +1,7 @@
 name: Manual File
 on: 
   repository_dispatch:
-    types:
-      - incident_report
+    types: [incident_report]
 
 jobs:
   handel-incident:
@@ -12,4 +11,4 @@ jobs:
         run: echo "Incdent report"
       - name: print commit message
         run: echo " $ {{ github.event.head_commit.message }} "
-  
+
