@@ -7,10 +7,9 @@ jobs:
     steps:
       - run: |
           deprecated=true
-          if [[ deprecated ]]; then
-          echo "This is a deprecated job"
+          if [[ deprecated ]]; then      # if [ "$deprecated" = true ]; then
+          echo "::warining::This is a deprecated job"
           else
           echo "This is a valid job"
           fi
           
-          #   if [ "$deprecated" = true ]; then
