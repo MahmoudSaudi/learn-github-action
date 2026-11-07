@@ -5,11 +5,29 @@ jobs:
   context:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          deprecated=true
-          if [[ deprecated ]]; then      # if [ "$deprecated" = true ]; then
-          echo "::warining::This is a deprecated job"
+      - name: Check if a file exists
+        run: |
+          if [ -f "config.yaml" ]; then
+            echo "::debug::config.yaml exists"
           else
-          echo "This is a valid job"
+            echo "::error::config.yaml is missing"
+
           fi
+
+
+    #   - name: Set API key
+    #     run: echo "API_KEY=12345" >> $GITHUB_ENV
+    #   - name: Use API key
+    #     run: echo "Using API Key $API_KEY"
+        
+
+
+
+    #   - run: |
+    #       deprecated=true
+    #       if [[ deprecated ]]; then      # if [ "$deprecated" = true ]; then
+    #       echo "::warining::This is a deprecated job"
+    #       else
+    #       echo "This is a valid job"
+    #       fi
           
