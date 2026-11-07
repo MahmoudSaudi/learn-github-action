@@ -5,10 +5,12 @@ jobs:
   context:
     runs-on: ubuntu-latest
     steps:
-    - run: |
-        deprecated = true
-        if [[ deprecated ]]; then
-            echo "This job is deprecated"
-        else
-            echo "This job is not deprecated"
-        fi  
+      - run: |
+          deprecated=true
+          if [[ deprecated ]]; then
+          echo "This is a deprecated job"
+          else
+          echo "This is a valid job"
+          fi
+          
+          #   if [ "$deprecated" = true ]; then
